@@ -1,0 +1,22 @@
+
+public class Code01 {
+
+	public static void main(String[] args) {
+
+		int n = 4;
+		// recursion
+		func(n);
+
+	}
+
+	public static int func(int k) {
+		if (k <= 0)
+			return 0;
+		else {
+
+			return k + func(k - 1);
+		}
+
+	}
+
+}
