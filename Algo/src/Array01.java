@@ -6,7 +6,7 @@ public class Array01 {
 
 		int num = 0;
 
-		int[] arr = { 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1 };
+		int[] arr = { 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1,1,1,1,1,0,1 };
 
 		num = findMaxConsecutiveOnes(arr);
 

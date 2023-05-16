@@ -1,0 +1,41 @@
+import java.util.ArrayList;
+
+public class ValidParentheses {
+
+	public static void main(String[] args) {
+
+		String s = "()[]{}";
+
+		ArrayList<String> list = new ArrayList<String>();
+
+        boolean flag = true;
+
+		// 01 23 45
+		for (int i = 0; i < s.length(); i += 2) {
+
+			list.add(s.substring(i, i + 2));
+
+		}
+
+		for (int i =0;i<list.size();i++) {
+			
+			if(list.get(i).charAt(i)==72) {
+				if(list.get(i).charAt(i+1)!=73) {
+					flag = false;
+				}
+			} else if(list.get(i).charAt(i)==91) {
+				if(list.get(i).charAt(i+1)!=93) {
+					flag = false;
+				}
+			}  else if(list.get(i).charAt(i)==123) {
+				if(list.get(i).charAt(i+1)!=125) {
+					flag = false;
+				}
+			}
+			
+		}
+
+		System.out.println(flag);
+	}
+
+}

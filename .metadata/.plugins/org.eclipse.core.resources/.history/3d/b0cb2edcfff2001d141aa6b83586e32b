@@ -1,0 +1,18 @@
+
+public class String01 {
+
+	public static void main(String[] args) {
+
+		String str = "abcedef";
+
+		while (str.length() > 0) {
+
+			str = str.substring(0, str.length() - 1);
+
+			System.out.println(str);
+
+		}
+
+	}
+
+}
