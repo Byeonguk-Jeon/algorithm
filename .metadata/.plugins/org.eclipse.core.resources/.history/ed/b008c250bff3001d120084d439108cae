@@ -1,0 +1,41 @@
+import java.util.ArrayList;
+
+public class LengthofLastWord {
+
+	public static void main(String[] args) {
+
+		String s = "   fly me   to   the moon  ";
+
+		ArrayList<String> list = new ArrayList<String>();
+
+		int pre = 0;
+		int end = 0;
+		int i =0;
+		int j =0;
+
+		// System.out.println(s.charAt(""));
+		for (i = j; i < s.length(); i++) {
+
+			if (s.charAt(i) != ' ') {
+				pre = i;
+				for (j = i + 1; j < s.length(); j++) {
+					if (s.charAt(j) == ' ') {
+						end = j;
+
+						s=s.substring(i, j);
+
+						list.add(s);
+				
+					}
+				}
+
+			}
+
+		}
+		
+		for(String str: list) {
+			System.out.println(str);
+		}
+	}
+
+}

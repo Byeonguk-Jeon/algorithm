@@ -1,0 +1,47 @@
+import java.util.Arrays;
+
+public class ValidAnagram {
+
+	public static void main(String[] args) {
+
+		String s = "anagram";
+		String t = "nagarai";
+
+		boolean flag = isAnagram(s, t);
+
+		System.out.println(flag);
+	}
+
+	public static boolean isAnagram(String s, String t) {
+
+		char[] arr = new char[s.length()];
+
+		char[] arr1 = new char[t.length()];
+
+		for (int i = 0; i < s.length(); i++) {
+
+			arr[i] = s.charAt(i);
+			arr1[i] = t.charAt(i);
+
+		}
+
+		Arrays.sort(arr);
+		Arrays.sort(arr1);
+
+		for(char x : arr) {
+			System.out.println(x);
+		}
+		
+		for (int j = 0; j < arr.length; j++) {
+
+			if (arr[j] != arr1[j]) {
+
+				return false;
+			}
+
+		}
+
+		return true;
+	}
+
+}

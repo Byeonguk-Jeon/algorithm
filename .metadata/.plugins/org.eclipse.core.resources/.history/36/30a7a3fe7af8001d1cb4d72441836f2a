@@ -1,0 +1,28 @@
+
+public class PlusOne {
+
+	public static void main(String[] args) {
+
+		int [] array= {9,9};
+		
+		int [] result = plusOne(array);
+
+	}
+
+    public static int[] plusOne(int[] digits) {
+        
+    	String temp = "";
+    	int num = 0;
+    	
+    	for(Integer i : digits) {
+    		temp+=Integer.toString(i);
+    	}
+    	
+    	num = Integer.parseInt(temp)+1;
+    	
+    	System.out.println(num);
+    	
+    	return null;
+    }
+	
+}

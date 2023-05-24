@@ -1,0 +1,39 @@
+
+public class PlusOne {
+
+	public static void main(String[] args) {
+
+		int [] array= {2,4,4};
+		
+		int [] result = plusOne(array);
+
+		for(int i : result) {
+			System.out.println(i);
+		}
+		
+	}
+
+    public static int[] plusOne(int[] digits) {
+        
+    	String temp = "";
+    	int num = 0;
+    	
+    	for(Integer i : digits) {
+    		temp+=Integer.toString(i);
+    	}
+    	
+    	num = Integer.parseInt(temp)+1;
+    	
+    	String temp2 = Integer.toString(num);
+    	
+    	int [] result = new int [temp2.length()];
+    	
+    	for(int i = 0;i<temp2.length();i++) {
+    		
+    		result[i] = Character.getNumericValue(temp2.charAt(i)); 
+    	}
+    	
+    	return result;
+    }
+	
+}

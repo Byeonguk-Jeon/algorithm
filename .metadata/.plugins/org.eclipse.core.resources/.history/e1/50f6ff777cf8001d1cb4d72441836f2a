@@ -1,0 +1,45 @@
+
+public class PlusOne {
+
+	public static void main(String[] args) {
+
+		long [] array = { 9,8,7,6,5,4,3,2,1,0};
+
+		long[] result = plusOne(array);
+
+		for (long i : result) {
+			System.out.println(i);
+		}
+
+	}
+
+	public static long[] plusOne(long[] digits) {
+        
+    	String temp = "";
+    	int num = 0;
+    	
+    	for(Long i : digits) {
+    		temp+=Long.toString(i);
+    	}
+    	
+    	try {
+        	num = Integer.parseInt(temp)+1;
+        	
+        	String temp2 = Integer.toString(num);
+        	
+        	long [] result = new long [temp2.length()];
+        	
+        	for(int i = 0;i<temp2.length();i++) {
+        		
+        		result[i] = Character.getNumericValue(temp2.charAt(i)); 
+        	}
+        	
+        	return result;
+    	} catch (Exception e) {
+			// TODO: handle exception
+		} 
+    
+    	return null;
+    }
+
+}

@@ -1,0 +1,50 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Stack;
+
+public class ValidParentheses {
+
+	public static void main(String[] args) {
+
+		int[] arr = { 1, 3, 5, 6 };
+		int target = 2;
+
+		int index = searchInsert(arr, target);
+
+		System.out.println("인덱스 : " + index);
+	}
+
+	public static int searchInsert(int[] nums, int target) {
+
+		int index = 0;
+
+		boolean flag = true;
+
+		for (int i = 0; i < nums.length; i++) {
+
+			if (nums[i] == target) {
+				return index = i;
+			} else if(nums[i] != target) {
+				flag = false;				
+			}
+
+		}
+
+		if (!flag) {
+			nums = Arrays.copyOf(nums, nums.length + 1);
+
+			nums[nums.length - 1] = target;
+			Arrays.sort(nums);
+			
+			for (int i = 0; i < nums.length; i++) {
+				if (nums[i] == target) {
+					index = i;
+				}
+			}
+		}
+
+
+
+		return index;
+	}
+}
