@@ -1,38 +1,39 @@
+import java.util.Scanner;
 
 public class Test18 {
 
 	public static void main(String[] args) {
-		int box = 5;
-		int boxArr [][] = {
-				{10,13,10,12,15},
-				{12,39,30,23,11},
-				{11,25,50,53,15},
-				{19,27,29,37,27},
-				{19,13,30,13,19}	
-		};
-		
-		int answer = Integer.MIN_VALUE;
-		int sum1,sum2;
-		for(int i = 0;i<box;i++) {
-			sum1=sum2=0;
-			for(int j=0;j<box;j++) {
-	
-				sum1+=boxArr[i][j];
-				sum2+=boxArr[j][i];
-				
-			}	
-			answer=Math.max(answer, sum1);
-			answer=Math.max(answer, sum2);
-			
+
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int[][] arr = new int[n + 1][6];
+		for (int i = 1; i <= n; i++) {
+			for (int j = 1; j < 5; j++) {
+				arr[i][j] = sc.nextInt();
+			}
 		}
-		sum1=sum2=0;
-		for(int i = 0;i<box;i++) {
-			sum1+=boxArr[i][i];
-			sum2+=boxArr[i][box-i-1];
+		System.out.println(solution(n, arr));
+	}
+
+	public static int solution(int n, int[][] arr) {
+		int answer = 0, max = Integer.MIN_VALUE;
+
+		for (int i = 1; i <= n; i++) {
+			int cnt = 0;
+			for (int j = 1; j <= n; j++) {
+				for (int k = 1; k <= 5; k++) {
+					if (arr[i][k] == arr[j][k]) {
+						cnt++;
+						break;
+					}
+				}
+			}
+			if (cnt > max) {
+				max = cnt;
+				answer = i;
+			}
 		}
-		answer=Math.max(answer, sum1);
-		answer=Math.max(answer, sum2);
-		
-		System.out.println(answer);
+
+		return answer;
 	}
 }
